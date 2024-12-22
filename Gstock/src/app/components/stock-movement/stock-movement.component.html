@@ -1,0 +1,120 @@
+<div class="container">
+    <br />
+
+    <div class="row">
+        <!-- Search Form -->
+        <div class="col-12 col-md-10 col-lg-8">
+            <form (submit)="searchStockMovements()" class="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
+                    </div>
+                    <div class="col">
+                        <input class="form-control form-control-lg form-control-borderless" 
+                               type="search" 
+                               placeholder="Rechercher un article" 
+                               [(ngModel)]="searchQuery" name="searchQuery">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-lg btn-primary" type="submit">Rechercher</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  
+
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center justify-content-between mb-3">
+            <h5 class="card-title">Tous les mouvements: 
+                <span class="text-muted fw-normal ms-2">{{ stockMovements.length }}</span>
+            </h5>
+            <a [routerLink]="['/new-stock-movement']" class="btn btn-primary">
+                <i class="bx bx-plus me-1"></i> Ajouter un nouveau mouvement
+            </a>
+        </div>
+    </div>
+     <!-- Filter Dropdown -->
+   <div class="row mb-3">
+    <div class="col-md-12">
+        <select class="form-select" [(ngModel)]="movementType" (change)="onTypeChange()">
+            <option value="default" selected>Tous les movements</option>
+            <option value="movementDate">Plus recents</option>
+            <option value="mostComing">Plus entrees</option>
+            <option value="mostGoing">Plus sorties</option>
+            <option value="coming">Entreés</option>
+            <option value="going">Sorties</option>
+            <option value="lost">perdues</option>
+        </select>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-md-12">
+        <button class="btn btn-success" (click)="generatePDF()">Generate PDF</button>
+    </div>
+</div>
+    <!-- Stock Movements Table -->
+    <div class="row mt-3" id="pdfTable">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table class="table project-list-table table-nowrap align-middle table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Date de movement </th>
+                            <th scope="col">Nom d'article</th>
+                            <th scope="col">Réference de mouvement</th>
+                            <th scope="col">Sortie</th>
+                            <th scope="col">Entreé</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Subdivison/Bureau</th>
+                            <th scope="col" style="width: 200px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let mov of stockMovements">
+                            <td>{{ mov.movementDate | date: 'short' }}</td>
+                            <td>{{ mov.article?.name }}</td>
+                            <td>{{ mov.movementReference }}</td>
+                            <td>{{ mov.deliveredQuantity }}</td>
+                            <td>{{ mov.incomingQuantity }}</td>
+                            <td>{{ mov.service?.name }}</td>
+                            <td>{{ mov.subservice?.name }}</td>
+                            <td>
+                                <a href="#" class="icon-link edit" title="Edit">
+                                    <i class="bx bx-edit"></i>
+                                </a>
+                                <a href="#" class="icon-link delete" title="Delete">
+                                    <i class="bx bx-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="footer-pagination">
+        <div class="row justify-content-end">
+            <div class="col-md-9 d-flex justify-content-center">
+                <ngb-pagination 
+                    [(page)]="thePageNumber"
+                    [pageSize]="thePageSize"
+                    [collectionSize]="theTotalElements"
+                    [maxSize]="5"
+                    [boundaryLinks]="true"
+                    (pageChange)="listStockMovement(thePageNumber - 1, thePageSize)">
+                </ngb-pagination>
+            </div>
+            <div class="col-md-3 d-flex justify-content-end align-items-center">
+                <select #myPageSelect class="form-select" (change)="updatePageSize(myPageSelect.value)">
+                    <option [value]="20" selected>20</option>
+                    <option [value]="40">40</option>
+                    <option [value]="80">80</option>
+                    <option [value]="100">100</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

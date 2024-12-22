@@ -1,0 +1,57 @@
+<div class="container bootstrap snippets bootdey">
+  <h2 class="text-center mb-4 mt-5">
+    <i class="fas fa-plus-circle icon-gray"></i> Ajouter un nouveau mouvement de stock
+  </h2>  
+  <div class="header-section mb-4"></div>
+  <form [formGroup]="createStockMovement" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="articleName">Nom d'article</label>
+      <input type="text" id="articleName" formControlName="articleName" class="form-control" />
+      <ul *ngIf="articles.length > 0" class="list-group">
+        <li *ngFor="let article of articles" (click)="selectArticle(article)" class="list-group-item">
+          {{ article.name }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <label for="movementReference">Référence de mouvement</label>
+      <select id="movementReference" formControlName="movementReference" class="form-control">
+        <option value="ENTREE">Entree</option>
+        <option value="SORTIE">Sortie</option>
+        <option value="PERDU">Perdu</option>
+      </select>
+    </div>
+
+    <div *ngIf="createStockMovement.get('movementReference')?.value !== 'SORTIE'" class="form-group">
+      <label for="incomingQuantity">Quantité entrée</label>
+      <input type="number" id="incomingQuantity" formControlName="incomingQuantity" class="form-control" />
+    </div>
+
+    <div *ngIf="createStockMovement.get('movementReference')?.value !== 'ENTREE'" class="form-group">
+      <label for="goingQuantity">Quantité sortie</label>
+      <input type="number" id="goingQuantity" formControlName="goingQuantity" class="form-control" />
+    </div>
+
+    <div *ngIf="createStockMovement.get('movementReference')?.value !== 'ENTREE'" class="form-group">
+      <label for="service">Service</label>
+      <select id="service" formControlName="service" class="form-control">
+        <option *ngFor="let service of services" [value]="service.id">{{ service.name }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="createStockMovement.get('movementReference')?.value !== 'ENTREE'" class="form-group">
+      <label for="subservice">Subdivision/Bureau</label>
+      <select id="subservice" formControlName="subservice" class="form-control">
+        <option *ngFor="let subservice of subservices" [value]="subservice.id">{{ subservice.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="retour">Retour</label>
+      <input type="text" id="retour" formControlName="retour" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </form>
+</div>

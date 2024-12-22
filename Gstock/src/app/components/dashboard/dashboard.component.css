@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7ff;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Custom container to adjust dashboard alignment */
+.custom-dashboard-container {
+    margin-left: 250px; /* Adjust this value to move the content more to the right */
+    padding-right: 15px; /* Standard padding */
+  }
+  .custom-dashboard-container .card {
+    height: 200px; /* Set the height to whatever suits your design */
+  }
+  .custom-dashboard-container .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  @media (max-width: 992px) {
+    .custom-dashboard-container {
+      margin-left: 0; /* Adjust for smaller screens */
+    }
+  }
+/* Main content wrapper */
+#dashboard-wrapper {
+    margin-left: 300px; /* Increased to push content further right */
+    padding: 20px;
+    background-color: #f4f3ef;
+    min-height: 100vh; /* Ensure it covers full height */
+    transition: margin-left 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #dashboard-wrapper {
+        margin-left: 0; /* Full width when sidebar is hidden */
+        width: 100%; /* Full width when sidebar is hidden */
+    }
+}
+
+/* Responsive adjustments when sidebar is toggled */
+@media (max-width: 768px) {
+    #dashboard-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #dashboard-wrapper {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+    }
+}
+
+/* Dashboard grid layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* One column by default */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Three columns on larger screens */
+    }
+}
+
+/* Card styles */
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Card header with gradient */
+.card-header {
+    width: 100%;
+    background: linear-gradient(45deg, #17ead9, #6078ea);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    font-size: 18px;
+}
+
+/* Card content */
+.card-content {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Card footer */
+.card-footer {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Utility classes for borders */
+.border-info {
+    border-left: 5px solid #0dcaf0;
+}
+
+.border-danger {
+    border-left: 5px solid #fd3550;
+}
+
+.border-success {
+    border-left: 5px solid #15ca20;
+}
+
+.border-warning {
+    border-left: 5px solid #ffc107;
+}
+
+/* Utility classes for icons */
+.widgets-icons-2 {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ededed;
+    font-size: 27px;
+    border-radius: 10px;
+}
+
+/* Text utilities */
+.text-white {
+    color: #fff;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-scooter {
+    background: linear-gradient(45deg, #17ead9, #6078ea);
+}
+
+.bg-gradient-bloody {
+    background: linear-gradient(45deg, #f54ea2, #ff7676);
+}
+
+.bg-gradient-ohhappiness {
+    background: linear-gradient(45deg, #00b09b, #96c93d);
+}
+
+.bg-gradient-blooker {
+    background: linear-gradient(45deg, #ffdf40, #ff8359);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #dashboard-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Single column layout for small screens */
+    }
+}

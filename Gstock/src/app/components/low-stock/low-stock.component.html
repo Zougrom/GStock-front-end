@@ -1,0 +1,26 @@
+<div class="row" id="pdfTable">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table project-list-table table-nowrap align-middle table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Stock initial</th>
+                        <th scope="col">Stock de sécurité</th>
+                        <th scope="col">Stock final</th>
+                        <th scope="col">Situation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let article of articles">
+                        <td>{{article.name}}</td>
+                        <td>{{article.initialStock}}</td>
+                        <td>{{article.securityStock}}</td>
+                        <td>{{article.finalStock}}</td>
+                        <td>{{article.situation}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

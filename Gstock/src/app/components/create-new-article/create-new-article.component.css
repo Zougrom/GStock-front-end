@@ -1,0 +1,126 @@
+/* Container Styling */
+.container {
+    background-color: #f8f9fa; /* Light background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Container Styling */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.icon-large {
+    font-size: 7rem;
+    color: #5a6268;
+}
+
+/* Form Header */
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Form Styling */
+.form-horizontal .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-custom {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+.input-custom:focus {
+    border-color: #5a6268;
+    box-shadow: 0px 0px 5px rgba(90, 98, 104, 0.2);
+}
+
+/* Submit Button Styling */
+.custom-button {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #495057;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Text Styling */
+h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #343a40;
+}
+
+label {
+    font-weight: 500;
+    color: #343a40;
+}
+
+/* Breakpoint for Small Devices */
+@media (max-width: 768px) {
+    .icon-container {
+        margin-bottom: 40px;
+    }
+    .form-horizontal {
+        padding: 0 20px;
+    }
+}
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #d0e13b;
+    border-color: #d0e13b;
+    color: #fff;
+}
+.btn-primary {
+    background-color:#65686d;
+    border-color: #65686d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Adjust padding for button */
+}
+/* Container Styling */
+.container {
+    background-color: #f8f9fa; /* Light background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 20px; /* Add margin-bottom to separate from other content */
+}
+
+/* Form Header */
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust bottom margin */
+   
+}
+
+/* Icon Styling */
+.icon-gray {
+    color: #65686d; /* Gray color */
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.5rem; /* Adjust icon size */
+}
+
+/* Adjust layout for small devices */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20px; /* Add margin-top for small devices */
+    }
+}

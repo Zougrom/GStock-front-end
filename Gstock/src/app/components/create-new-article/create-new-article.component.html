@@ -1,0 +1,56 @@
+<div class="container bootstrap snippets bootdey">
+    
+    <hr>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-4 text-center">
+
+            <div class="icon-container mb-3">
+                <i class="bx bx-package icon-large"></i> 
+            </div>
+        </div>
+        
+        <div class="col-md-8">
+            <div class="personal-info">
+                <h3 class="text-center mb-4">Information d'article</h3>
+                <form [formGroup]="createArticleFormGroup" class="form-horizontal" role="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Nom d'article:</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" formControlName="name">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Stock intial:</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" formControlName="initialStock">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Stock de securité:</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" formControlName="securityStock">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Unité de mesure:</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" formControlName="unitOfMeasurement">
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Submit Button -->
+                    <div class="form-group row">
+                        <div class="col-lg-9 offset-lg-3">
+                            <button type="submit" class="btn btn-primary">Enregistrer l'article</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+  </div>
+  

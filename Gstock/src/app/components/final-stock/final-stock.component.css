@@ -1,0 +1,154 @@
+/* General table styles */
+.table-nowrap td, .table-nowrap th {
+    white-space: nowrap;
+}
+
+.table-borderless>:not(caption)>*>* {
+    border-bottom-width: 0;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0.75rem 0.75rem;
+    background-color: #fff;
+    border-bottom-width: 1px;
+}
+
+/* Button styles */
+.action-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Ensures buttons take up equal space */
+}
+
+.action-button:hover {
+    background-color: #45a049;
+}
+
+/* Additional Styles */
+.d-flex.align-items-center.justify-content-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Background for the page */
+body {
+    background: #ddd;
+}
+
+/* Adjust layout for sidebar */
+.container {
+    margin-left: 270px; /* Adjust for the sidebar */
+}
+
+/* PDF Button styles */
+.pdf-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-button:hover {
+    background-color: #45a049;
+}
+
+/* Highlight rows where situation is "Commander" and alert is "Bas" */
+.highlight-row {
+    background-color: #ffe6b3 !important; /* Warm yellow background */
+    color: #333 !important; /* Darker text for contrast */
+    font-weight: bold;
+    animation: pulse 1.5s infinite; /* Subtle animation */
+}
+
+/* Apply a green color to other rows with a similar effect */
+.regular-row {
+    background-color: #d5f5d5 !important; /* Light green background */
+    color: #333 !important;
+    animation: pulse-green 1.5s infinite; /* Similar pulse animation */
+}
+
+/* Optional pulse animation for the rows */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Soft orange glow */
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 165, 0, 0.8); /* Intense glow */
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Soft orange glow */
+    }
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 10px rgba(144, 238, 144, 0.5); /* Soft green glow */
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(144, 238, 144, 0.8); /* Intense green glow */
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(144, 238, 144, 0.5); /* Soft green glow */
+    }
+}
+
+/* Table header styles */
+.table thead th {
+    background-color: #333 !important; /* Dark background */
+    color: #fff !important; /* White text */
+    font-weight: bold;
+}
+
+/* Ensure the highlight class colors the entire row */
+.table-responsive .table.project-list-table.table-nowrap.align-middle.table-borderless tbody tr.highlight-row {
+    background-color: #ffe6b3 !important;
+}
+
+.table-responsive .table.project-list-table.table-nowrap.align-middle.table-borderless tbody tr.highlight-row td {
+    background-color: #ffe6b3 !important;
+    color: #333 !important;
+}
+
+.table-responsive .table.project-list-table.table-nowrap.align-middle.table-borderless tbody tr.regular-row {
+    background-color: #d5f5d5 !important;
+}
+
+.table-responsive .table.project-list-table.table-nowrap.align-middle.table-borderless tbody tr.regular-row td {
+    background-color: #d5f5d5 !important;
+    color: #333 !important;
+}
+
+/* Styles for the headings container */
+.d-flex.align-items-center.justify-content-between {
+    margin-bottom: 20px; /* Space below the headings container */
+}
+
+/* Styling for the headings */
+.card-title {
+    font-size: 1.25rem; /* Adjust font size */
+    color: #333; /* Darker text color */
+    font-weight: bold; /* Make text bold */
+    margin-bottom: 5px; /* Space below each heading */
+}
+
+/* Styling for the additional text in the headings */
+.card-title span {
+    color: #777; /* Lighter color for additional text */
+    font-weight: normal; /* Normal weight for additional text */
+}

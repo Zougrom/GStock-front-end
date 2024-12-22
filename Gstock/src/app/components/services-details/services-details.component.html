@@ -1,0 +1,25 @@
+<div class="container">
+    <h2> {{ entityName }}</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date du mouvement</th>
+          <th>nom d article</th>
+          <th>reference du mouvement</th>
+          <th>Sortie</th>
+          <th>Entree</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movement of stockMovements">
+            <td>{{ movement.movementDate | date: 'short' }}</td>
+            <td>{{ movement.article?.name }}</td>
+            <td>{{ movement.movementReference }}</td>
+            <td>{{ movement.deliveredQuantity }}</td>
+            <td>{{ movement.incomingQuantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="stockMovements.length === 0">Pas de mouvements pour le moment chez {{ entityName }}.</p>
+
+  </div>

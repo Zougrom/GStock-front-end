@@ -1,0 +1,136 @@
+body {
+    margin-top: 20px;
+    background-color: #ddd;
+}
+
+.container {
+    margin-top: 0; /* Remove extra margin above */
+    margin-left: 270px; /* Adjust for the sidebar */
+}
+
+.project-list-table {
+    border-collapse: separate;
+    border-spacing: 0 12px;
+}
+
+
+.project-list-table tr {
+    background-color: #ffffff2a;
+}
+
+.table-nowrap td, .table-nowrap th {
+    white-space: nowrap;
+}
+
+.table-borderless>:not(caption)>*>* {
+    border-bottom-width: 0;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0.75rem 0.75rem;
+    background-color: #fff;
+    border-bottom-width: 1px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: inset 0 0 0 9999px #f8f9fa;
+}
+
+.table-borderless {
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure rounded corners apply to the table */
+}
+
+a {
+    color: #3b76e1;
+    text-decoration: none;
+}
+
+.icon-link {
+    font-size: 1.25rem;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icon-link.edit {
+    color: #65686d;
+}
+
+.icon-link.delete {
+    color: #65686d;
+}
+
+.btn-primary {
+    background-color:#65686d;
+    border-color: #65686d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Adjust padding for button */
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #65686d; /* Slightly darker blue for hover effect */
+    border-color: #65686d;
+    color: #fff;
+}
+
+.form-control-borderless {
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.pdf-button {
+    background-color: #65686d; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove borders */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline */
+    font-size: 16px; /* Increase font size */
+    margin: 10px 0; /* Add some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Add a transition for hover effect */
+  }
+  
+  .pdf-button:hover {
+    background-color: #d0e13b
+  }.btn-primary:hover, .btn-primary:focus {
+    background-color: #d0e13b;
+    border-color: #d0e13b;
+    color: #fff;
+  }
+  /* Adjust icon position and size inside select options */
+.form-control option {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-control option i {
+    margin-left: 8px;
+    font-size: 14px; /* Adjust icon size as needed */
+  }
+  .custom-select {
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 0.25rem; /* Slightly rounded corners */
+    padding: 0.25rem 0.5rem; /* Reduced padding */
+    font-size: 0.875rem; /* Smaller font size */
+    background-color: #ffffff; /* Background color */
+    color: #495057; /* Text color */
+    width: 150px; /* Set a fixed width or adjust as needed */
+}
+
+.custom-select:focus {
+    border-color: #80bdff; /* Border color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Box shadow on focus */
+}
+
+.custom-select option {
+    background-color: #ffffff; /* Option background color */
+}

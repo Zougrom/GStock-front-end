@@ -1,0 +1,39 @@
+<div class="container bootstrap snippets bootdey">
+    <h2 class="text-center mb-4 mt-5">Ajouter une nouvelle Subdivision ou bureau ici</h2>
+    <hr>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-4 text-center">
+            <div class="icon-container mb-3">
+                <i class="bx bx-desktop icon-large"></i>
+            </div>
+        </div>
+        
+        <div class="col-md-8">
+            <div class="personal-info">
+                <h3 class="text-center mb-4">Information du Subdivision/Bureau</h3>
+                <form [formGroup]="createSubdivision" class="form-horizontal" role="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Nom</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" formControlName="name">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="service">Service</label>
+                        <select id="service" formControlName="service" class="form-control" *ngIf="services.length > 0">
+                          <option *ngFor="let service of services" [value]="service.id">{{ service.name }}</option>
+                        </select>
+                      </div>
+                      <br>
+                    <div class="form-group row">
+                        <div class="col-lg-9 offset-lg-3">
+                            <button type="submit" class="btn btn-primary">Enregistrer le Service</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>

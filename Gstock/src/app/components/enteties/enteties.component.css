@@ -1,0 +1,129 @@
+/* General Container Styling */
+.container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Title Styling */
+.card-title {
+    font-size: 1.5rem;
+    color: #343a40;
+    font-weight: bold;
+    margin-left: 20%; /* Move the title to the right */
+}
+
+.card-title .text-muted {
+    font-size: 1.2rem;
+}
+
+/* Table Container and Styling */
+.table-responsive {
+    margin-top: 20px;
+    margin-left: 25%; /* Move the table container more to the right */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 75%; /* Control table width to avoid horizontal scroll */
+}
+
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%; /* Ensure the table stays within its container */
+}
+
+.table th {
+    background-color: #6c757d;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.table td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+.table thead th {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Link Styling */
+.table a {
+    text-decoration: none;
+    color: inherit; /* Remove link color */
+    font-weight: 500;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+/* Subservice List */
+.table ul {
+    padding-left: 0; /* Remove indentation */
+    margin-bottom: 0;
+    list-style-type: none; /* Remove dots */
+}
+
+.table li {
+    margin-bottom: 5px;
+}
+
+/* Action Icons */
+.icon-link {
+    display: inline-block;
+    color: #6c757d;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+    color: #007bff;
+}
+
+.icon-link.edit:hover {
+    color: #ffc107;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.2rem;
+        margin-left: 0; /* Reset margin on smaller screens */
+    }
+
+    .table-responsive {
+        margin-left: 0; /* Reset margin on smaller screens */
+        width: 100%;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+    }
+}
